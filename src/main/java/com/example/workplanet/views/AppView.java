@@ -38,8 +38,9 @@ public class AppView extends AppLayout {
         addToNavbar(navbarLayout);
 
         RouterLink jobViewLink = new RouterLink("View JobPosts", JobCard.class);
+        RouterLink managePostLink = new RouterLink("Manage your job", ManageJobsView.class);
 
-        addToDrawer(new VerticalLayout(jobViewLink));
+        addToDrawer(new VerticalLayout(jobViewLink, managePostLink));
 
     }
 

@@ -11,6 +11,7 @@ public class JobPost {
     private int id;
 
     @Column(nullable = false)
+    @NotBlank
     private String jobbCategory;
 
     @Column(nullable = false)
