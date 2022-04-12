@@ -24,12 +24,12 @@ public class JobCard extends VerticalLayout {
 
         jobService.findAll().forEach(jobPost -> {
 
-            RouterLink title = new RouterLink(jobPost.getTitle(), JobView.class);
+            RouterLink category = new RouterLink(jobPost.getJobbCategory(), JobView.class);
 
-            title.setQueryParameters(new QueryParameters(Map.of("jobId", List.of(String.valueOf(jobPost.getId())))));
-            title.getStyle().set("font-seize", "34");
-            title.getStyle().set("font-weight", "bold");
-            Span category = new Span(jobPost.getJobbCategory());
+            category.setQueryParameters(new QueryParameters(Map.of("jobId", List.of(String.valueOf(jobPost.getId())))));
+            category.getStyle().set("font-seize", "34");
+            category.getStyle().set("font-weight", "bold");
+            Span title = new Span(jobPost.getTitle());
 
             Paragraph location = new Paragraph(jobPost.getLocation());
             Paragraph postedBy = new Paragraph("Posted By: ");
@@ -38,7 +38,7 @@ public class JobCard extends VerticalLayout {
             category.getStyle().set("font-weight", "bold");
             postedBy.add(author);
 
-            add(title, category, location, postedBy, new Hr());
+            add(category, title, location, postedBy, new Hr());
 
         });
     }
