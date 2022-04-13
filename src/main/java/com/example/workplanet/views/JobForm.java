@@ -14,6 +14,9 @@ public class JobForm extends FormLayout {
    TextField jobbCategory = new TextField("Category");
    TextField title = new TextField("Jobtitle");
    TextField location = new TextField("Location");
+   TextField fullName = new TextField("FullName");
+   TextField aboutMe = new TextField("AboutMe");
+   TextField experiences = new TextField("Experiences");
    Button saveButton = new Button("Save");
 
    Binder<JobPost> binder = new BeanValidationBinder<>(JobPost.class);
@@ -30,7 +33,7 @@ public class JobForm extends FormLayout {
 
        saveButton.addClickListener(evt -> onSave());
 
-       add(jobbCategory, title, location, saveButton);
+       add(jobbCategory, title, location, fullName, aboutMe, experiences, saveButton);
    }
 
     private void onSave() {

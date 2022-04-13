@@ -54,6 +54,9 @@ public class ManageJobsView extends VerticalLayout {
         grid.addColumn(JobPost::getJobbCategory).setHeader("Category").setSortable(true);
         grid.addColumn(JobPost::getTitle).setHeader("Jobtitle").setSortable(true);
         grid.addColumn(JobPost::getLocation).setHeader("Location").setSortable(true);
+        grid.addColumn(JobPost::getFullName).setHeader("FullName").setSortable(true);
+        grid.addColumn(JobPost::getAboutMe).setHeader("AboutMe").setSortable(true);
+        grid.addColumn(JobPost::getExperiences).setHeader("Experiences").setSortable(true);
 
         grid.asSingleSelect().addValueChangeListener(evt -> {
             jobForm.setJobPost(evt.getValue());

@@ -50,6 +50,15 @@ public class JobService {
         if (changedJobPost.getLocation() !=null)
             jobPost.setLocation(changedJobPost.getLocation());
 
+        if (changedJobPost.getFullName() !=null)
+            jobPost.setLocation(changedJobPost.getFullName());
+
+        if (changedJobPost.getAboutMe() !=null)
+            jobPost.setLocation(changedJobPost.getAboutMe());
+
+        if (changedJobPost.getExperiences() !=null)
+            jobPost.setLocation(changedJobPost.getExperiences());
+
         return jobPostRepository.save(jobPost);
 
     }

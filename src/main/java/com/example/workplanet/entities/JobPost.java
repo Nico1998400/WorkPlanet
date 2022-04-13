@@ -22,20 +22,60 @@ public class JobPost {
     @NotBlank
     private String location;
 
+    @NotBlank
+    @Column(nullable = false)
+    private String fullName;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String aboutMe;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String experiences;
+
+
     @ManyToOne //Flera JobPoster kan skapas av en User
     @JoinColumn(name = "appuser_id")
     private AppUser appUser;
 
 
-    public JobPost(String jobbCategory, String title, String location, AppUser appUser) {
+    public JobPost(String jobbCategory, String title, String location, String fullName, String aboutMe, String experiences, AppUser appUser) {
         this.jobbCategory = jobbCategory;
         this.title = title;
         this.location = location;
+        this.fullName = fullName;
+        this.aboutMe = aboutMe;
+        this.experiences = experiences;
         this.appUser = appUser;
     }
 
     public JobPost() {
 
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getAboutMe() {
+        return aboutMe;
+    }
+
+    public String getExperiences() {
+        return experiences;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setAboutMe(String aboutMe) {
+        this.aboutMe = aboutMe;
+    }
+
+    public void setExperiences(String experiences) {
+        this.experiences = experiences;
     }
 
     public void setId(int id) {
